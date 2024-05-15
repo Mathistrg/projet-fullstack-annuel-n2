@@ -7,8 +7,6 @@ Bienvenue sur **CommuniQuest** – votre nouvelle destination pour les discussio
 - [À propos](#à-propos)
 - [Fonctionnalités](#fonctionnalités)
 - [Installation](#installation)
-- [Utilisation](#utilisation)
-- [Contribuer](#contribuer)
 
 
 ## À propos
