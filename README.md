@@ -32,5 +32,8 @@ Pour installer CommuniQuest localement, suivez ces étapes :
     https://github.com/Mathistrg/projet-fullstack-annuel-n2.git
     ```
 
-2. Accédez au répertoire du projet :
-///////////
+2. Important :
+Pour faire fonctionner convenablement le projet il faut mettre dans le terminal ;
+    ```bash
+    install composer
+    ```
