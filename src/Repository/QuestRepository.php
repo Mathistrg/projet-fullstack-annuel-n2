@@ -8,12 +8,35 @@ use Doctrine\Persistence\ManagerRegistry;
 
 /**
  * @extends ServiceEntityRepository<Quest>
+ * 
+ * @method Quest|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Quest|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Quest[]    findAll()
+ * @method Quest[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
 class QuestRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Quest::class);
+    }
+
+    public function add(Quest $entity, bool $flush=false):void
+    {
+        $this->getEntityManager()->persist($entity);
+
+        if ($flush) {
+            $this->getEntityManager()->flush();
+        }
+    }
+
+    public function remove(Quest $entity, bool $flush=false):void
+    {
+        $this->getEntityManager()->remove($entity);
+
+        if ($flush) {
+            $this->getEntityManager()->flush();
+        }
     }
 
     //    /**
@@ -40,4 +63,20 @@ class QuestRepository extends ServiceEntityRepository
     //            ->getOneOrNullResult()
     //        ;
     //    }
+
+
+    /**
+    * @return Quest[] Returns an array of Quest objects
+    */
+   public function findBySearch(string $text): array
+   {
+       return $this->createQueryBuilder('a')
+           ->andWhere('a.content LIKE :val')
+           ->setParameter('val', "%$text%")
+           ->getQuery()
+           ->getResult()
+        ;
+   }
+
+
 }

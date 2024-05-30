@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello LookupController!{% endblock %}
+
+{% block body %}
+<div>
+    <form>
+        <input type="search" name="search" placeholder="Recherche ..."/>
+        <button type="submit">Rechercher</button>
+    </form>
+</div>
+<table>
+{% for quest in quests %}
+        <tr>
+            <td>{{ quest.id }}</td>
+            <td>{{ quest.title }}</td>
+            <td>{{ quest.content }}</td>
+            <td>
+                <a href="{{ path('app_quest_show', {'id': quest.id}) }}">show</a>
+                <a href="{{ path('app_quest_edit', {'id': quest.id}) }}">edit</a>
+            </td>
+        </tr>
+    {% else %}
+        <tr>
+            <td colspan="4">no records found</td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}
