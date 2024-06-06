@@ -20,7 +20,7 @@ Notre mission est de créer un espace en ligne où la communauté peut partager 
 
 ## Fonctionnalités
 
-- **Création de Contenu** : Publiez des discussions, posez des questions, et partagez des réponses.
+- **Création de Contenu** : Publiez des discussions, répondez ou posez des questions, et partagez des réponses.
 - **Profil Utilisateur** : Créez un profil ou se connecter.
 
 ## Installation
